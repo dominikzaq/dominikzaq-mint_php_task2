@@ -8,6 +8,6 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-
+.idea/
 # don't ignore keep files
 !.keep
