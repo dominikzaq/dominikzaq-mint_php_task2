@@ -26,10 +26,11 @@ class UserController extends AbstractController
      */
     public function homeAdmin()
     {
-        $i = 10;
-        $test = "dsadas";
-        $witaj = $test.$i;
-        dump($witaj);
+        $i = 1;
+        if($i)
+        {
+            dump("test");
+        }
         die();
     }
 

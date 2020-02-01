@@ -19,17 +19,16 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $userName = "user";
-        $password = "123456789";
+        $password = "user";
 
-        for ($i=0; $i < 40; $i++) {
+        for ($i=1; $i < 40; $i++) {
             $user = new User();
             $user->setUsername($userName.$i);
             $user->setRoles(['ROLE_USER']);
-            $password = $this->encoder->encodePassword($user, $password);
-            $user->setPassword($password);
+            $user->setPassword($this->encoder->encodePassword($user, $password.$i));
             $user->setAccountDisabled(rand(0,1));
             $manager->persist($user);
-            $manager->flush();
         }
+        $manager->flush();
     }
 }
