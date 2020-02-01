@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Enum\AccountEnum;
 use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,11 +18,23 @@ class UserController extends AbstractController
      */
     public function homeUser()
     {
-        return $this->render('user/new.html.twig');
+        return $this->render('user/index.html.twig');
     }
 
     /**
-     * @Route("new/user", name="user_new", methods={"GET", "POST"})
+     * @Route("/test/", name="admin_home", methods={"GET", "POST"})
+     */
+    public function homeAdmin()
+    {
+        $i = 10;
+        $test = "dsadas";
+        $witaj = $test.$i;
+        dump($witaj);
+        die();
+    }
+
+    /**
+     * @Route("register", name="user_new", methods={"GET", "POST"})
      */
     public function createUser(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -31,9 +44,8 @@ class UserController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
-            $user->setAccountDisabled(0);
-
-
+            $user->setAccountDisabled(AccountEnum::ENABLED);
+            $user->setRoles(['ROLE_USER']);
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
