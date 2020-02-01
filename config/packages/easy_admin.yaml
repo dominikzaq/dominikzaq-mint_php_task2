@@ -1,0 +1,14 @@
+easy_admin:
+    site_name: 'MINT PHP'
+    entities:
+        User:
+            label: 'Users'
+            display_name: false
+            display_avatar: false
+            class: App\Entity\User
+            list:
+                fields: #['id', 'username', 'actions']
+                    - { property: 'username',  type: 'string' }
+                    - { label: 'action', property: 'account_disabled', type: 'toggle' }
+    list:
+        max_results: 10

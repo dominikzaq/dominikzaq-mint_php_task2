@@ -23,6 +23,9 @@ __User account__ <br />
 user login: user0, user1...,user39 <br />
 password: 1234567879
 
+## User admin
+route: /admin
+
 ## Run app:
 __Go to mint_php_task2 directory and run in bash.__ <br />
 ```symfony server:start```
