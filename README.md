@@ -20,8 +20,8 @@ __Go to mint_php_task2 directory and run in bash.__ <br />
 ```php bin/console doctrine:fixtures:load```
 
 __User account__ <br />
-user login: user0, user1...,user39 <br />
-password: 1234567879
+user login: user1, user2...,user39 <br />
+password: user1, user2,...,user39
 
 ## User admin
 route: /admin
