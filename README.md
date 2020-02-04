@@ -4,7 +4,7 @@ __Symfony:__ Version 5.0.3
 ## Requirements:
 - composer
 - symfony(wget https://get.symfony.com/cli/installer -O - | bash)
-- mysql
+- mysql 5.7.29
 - php 7.2.5 or higher
 - apache2
 
