@@ -22,19 +22,6 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/test/", name="admin_home", methods={"GET", "POST"})
-     */
-    public function homeAdmin()
-    {
-        $i = 1;
-        if($i)
-        {
-            dump("test");
-        }
-        die();
-    }
-
-    /**
      * @Route("register", name="user_new", methods={"GET", "POST"})
      */
     public function createUser(Request $request, UserPasswordEncoderInterface $passwordEncoder)
